@@ -1,7 +1,13 @@
+require "./sudent.rb"
+require "./teacher.rb"
+
 class Person
-  def initialize(name, age, parent_permission = "unknown")
-    @id = id
+  attr_accessor :name, :age
+  attr_reader :id
+  def initialize(name = "unknown", age, parent_permission: true)
+    @id = Random.rand(1...100)
     @name = name
+    @parent_permission = parent_permission
     @age = age
   end
 
@@ -14,7 +20,7 @@ class Person
   end
 
   def can_use_services?
-    if is_of_age? = true && parent_permission = true
+    if is_of_age? = true && parent_permission
       return true
     end
   end
