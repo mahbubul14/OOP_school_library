@@ -21,4 +21,18 @@ class Person
   end
 
   private :of_age?
+
+  def validate_name
+    
+  end
+end
+
+class Corrector
+  def initialize
+    
+  end
+
+  def correct_name
+    
+  end
 end
