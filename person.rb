@@ -1,10 +1,8 @@
-require_relative 'sudent'
-require_relative 'teacher'
-require_relative '.corrector'
+require_relative 'corrector'
 
 class Person
   attr_accessor :name, :age
-  attr_reader :id
+  attr_reader :id, :rentals
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     @id = Random.rand(1...100)
@@ -12,6 +10,7 @@ class Person
     @parent_permission = parent_permission
     @age = age
     @corrector = Corrector.new
+    @rentals = []
   end
 
   def of_age?
