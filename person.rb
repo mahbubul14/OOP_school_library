@@ -1,4 +1,5 @@
 require_relative 'corrector'
+require_relative 'rental'
 
 class Person
   attr_accessor :name, :age
@@ -19,6 +20,10 @@ class Person
 
   def can_use_services?
     of_age? || @parent_permission
+  end
+
+  def add_rental(date, book)
+    Rental.new(date, self, book)
   end
 
   private :of_age?
